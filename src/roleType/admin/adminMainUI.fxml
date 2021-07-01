@@ -1,15 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="roleType.admin.AdminController">
+<AnchorPane prefHeight="495.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="roleType.admin.AdminController">
    <children>
       <Label alignment="CENTER" prefHeight="50.0" prefWidth="600.0" text="Admin Main Section" textFill="#b90909">
          <font>
             <Font size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="35.0" layoutY="86.0" onMouseClicked="#processManager" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/manager.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="225.0" layoutY="86.0" onMouseClicked="#processStaff" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/staff.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="548.0" layoutY="54.0" onMouseClicked="#processLogout" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/logout.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="35.0" layoutY="271.0" onMouseClicked="#processFood" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/food.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="225.0" layoutY="271.0" onMouseClicked="#processDrink" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/drink.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="416.0" layoutY="271.0" onMouseClicked="#processSale" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/shopping-bag.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="35.0" layoutY="203.0" onMouseClicked="#processManager" prefHeight="26.0" prefWidth="120.0" text="Manager Section">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="225.0" layoutY="203.0" onMouseClicked="#processStaff" prefHeight="26.0" prefWidth="120.0" text="Staff Section">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="537.0" layoutY="86.0" prefHeight="26.0" prefWidth="54.0" text="Logout">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="35.0" layoutY="398.0" onMouseClicked="#processFood" prefHeight="26.0" prefWidth="120.0" text="Food Section">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="225.0" layoutY="398.0" onMouseClicked="#processDrink" prefHeight="26.0" prefWidth="120.0" text="Drink Section">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="416.0" layoutY="398.0" onMouseClicked="#processSale" prefHeight="26.0" prefWidth="120.0" text="Sale Section">
+         <font>
+            <Font size="14.0" />
          </font>
       </Label>
    </children>

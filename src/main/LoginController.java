@@ -88,6 +88,9 @@ public class LoginController implements Initializable {
         );
 
         cob.setItems(role);
+        tfEmail.setText("aa@gmail.com");
+        tfPassword.setText("aa");
+        cob.setValue("Admin");
     }
 }
 
