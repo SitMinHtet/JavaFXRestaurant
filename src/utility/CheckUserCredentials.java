@@ -13,7 +13,7 @@ public class CheckUserCredentials {
     private Statement statement;          //
     private ResultSet resultSet;          //execute query
 
-    public Boolean isUserValid(String email,String password,String role, String loginType) throws SQLException {
+    public Boolean isUserValid( String email,String password,String role, String loginType) throws SQLException {
 
         boolean isLoginOk =false;
 
@@ -27,6 +27,8 @@ public class CheckUserCredentials {
         if (resultSet.next()){
             isLoginOk = true;
         }
+
+        conn.close();
 
         return isLoginOk;
     }

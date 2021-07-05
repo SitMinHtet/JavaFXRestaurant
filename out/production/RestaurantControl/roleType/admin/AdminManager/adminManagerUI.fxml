@@ -5,11 +5,15 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -22,7 +26,7 @@
                 <Font size="36.0" />
             </font>
         </Label>
-      <SplitPane dividerPositions="0.29797979797979796" layoutY="50.0" prefHeight="550.0" prefWidth="700.0">
+      <SplitPane dividerPositions="0.3144699140401146" layoutY="50.0" prefHeight="550.0" prefWidth="700.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
@@ -49,48 +53,164 @@
                         </Button>
                      </children>
                   </HBox>
-                  <VBox fx:id="tfFname" layoutX="4.0" layoutY="140.0" prefHeight="342.0" prefWidth="197.0">
+                  <VBox layoutX="4.0" layoutY="140.0" prefHeight="342.0" prefWidth="210.0">
                      <children>
-                        <TextField promptText="First Name">
+                        <HBox prefHeight="25.0" prefWidth="185.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../image/member/name.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="tfFName" cache="true" prefHeight="25.0" prefWidth="185.0" promptText="First Name">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
                            <VBox.margin>
-                              <Insets top="15.0" />
+                              <Insets top="10.0" />
                            </VBox.margin>
-                        </TextField>
-                        <TextField fx:id="tfLname" promptText="Last Name">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../image/member/name.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="tfLName" prefHeight="25.0" prefWidth="185.0" promptText="Last Name">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
                            <VBox.margin>
-                              <Insets top="15.0" />
+                              <Insets top="10.0" />
                            </VBox.margin>
-                        </TextField>
-                        <TextField fx:id="tfUsername" promptText="Username">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../image/user.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="tfUsername" prefHeight="25.0" prefWidth="185.0" promptText="Username">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
                            <VBox.margin>
-                              <Insets top="15.0" />
+                              <Insets top="10.0" />
                            </VBox.margin>
-                        </TextField>
-                        <TextField fx:id="tfEmail" promptText="Email">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../image/member/email.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="tfEmail" prefHeight="25.0" prefWidth="185.0" promptText="Email">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
                            <VBox.margin>
-                              <Insets top="15.0" />
+                              <Insets top="10.0" />
                            </VBox.margin>
-                        </TextField>
-                        <TextField fx:id="tfPhone" promptText="Phone">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../image/padlock.png" />
+                                 </image>
+                              </ImageView>
+                              <PasswordField fx:id="tfPassword" prefHeight="25.0" prefWidth="185.0" promptText="Password">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </PasswordField>
+                           </children>
                            <VBox.margin>
-                              <Insets top="15.0" />
+                              <Insets top="10.0" />
                            </VBox.margin>
-                        </TextField>
-                        <TextField fx:id="tfAddress" promptText="Address">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../image/member/telephone.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="tfPhone" prefHeight="25.0" prefWidth="185.0" promptText="Phone">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
                            <VBox.margin>
-                              <Insets top="15.0" />
+                              <Insets top="10.0" />
                            </VBox.margin>
-                        </TextField>
-                        <ComboBox fx:id="cobStatus" prefHeight="26.0" prefWidth="201.0" promptText="Status">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../image/member/user-check-interface-symbol.png" />
+                                 </image>
+                              </ImageView>
+                              <ComboBox fx:id="cobStatus" prefHeight="25.0" prefWidth="185.0" promptText="Status">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                           </children>
                            <VBox.margin>
-                              <Insets top="15.0" />
+                              <Insets top="10.0" />
                            </VBox.margin>
-                        </ComboBox>
-                        <DatePicker fx:id="dbDOB" prefHeight="26.0" prefWidth="203.0" promptText="Date of Birth">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../image/member/birthday.png" />
+                                 </image>
+                              </ImageView>
+                              <DatePicker fx:id="dbDOB" prefHeight="25.0" prefWidth="185.0" promptText="Date of Birth">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </DatePicker>
+                           </children>
                            <VBox.margin>
-                              <Insets top="15.0" />
+                              <Insets top="10.0" />
                            </VBox.margin>
-                        </DatePicker>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets top="3.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../../image/member/home.png" />
+                                 </image>
+                              </ImageView>
+                              <TextArea fx:id="tfAddress" prefHeight="25.0" prefWidth="185.0" promptText="Address">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextArea>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
                      </children>
                   </VBox>
                   <Separator layoutX="2.0" layoutY="97.0" prefWidth="200.0" />
@@ -99,28 +219,29 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button layoutX="73.0" layoutY="491.0" mnemonicParsing="false" onAction="#processClear" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #ff0000;" text="Clear" textFill="WHITE" />
-                  <Button layoutX="135.0" layoutY="492.0" mnemonicParsing="false" onAction="#processSave" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #0064ff;" text="Save" textFill="WHITE" />
+                  <Button layoutX="65.0" layoutY="504.0" mnemonicParsing="false" onAction="#processClear" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #ff0000;" text="Clear" textFill="WHITE" />
+                  <Button layoutX="135.0" layoutY="504.0" mnemonicParsing="false" onAction="#processSave" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #0064ff;" text="Save" textFill="WHITE" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView layoutY="68.0" prefHeight="482.0" prefWidth="487.0">
+                  <TableView fx:id="managerTable" layoutY="77.0" prefHeight="473.0" prefWidth="487.0">
                     <columns>
                       <TableColumn fx:id="managerId" prefWidth="28.0" text="ID" />
                       <TableColumn fx:id="managerFName" prefWidth="50.0" text="FName" />
                         <TableColumn fx:id="managerLName" prefWidth="51.0" text="LName" />
                         <TableColumn fx:id="managerUsername" prefWidth="65.0" text="Username" />
-                        <TableColumn fx:id="managerEmail" prefWidth="67.0" text="Email" />
-                        <TableColumn fx:id="managerPhone" prefWidth="56.0" text="Phone" />
-                        <TableColumn fx:id="managerStatus" prefWidth="43.0" text="Status" />
+                        <TableColumn fx:id="managerEmail" prefWidth="25.0" text="Email" />
+                        <TableColumn fx:id="managerPhone" prefWidth="42.0" text="Phone" />
+                        <TableColumn fx:id="managerStatus" prefWidth="99.0" text="Status" />
                         <TableColumn fx:id="managerDOB" prefWidth="58.0" text="DOB" />
-                        <TableColumn fx:id="managerAddress" prefWidth="68.0" text="Address" />
+                        <TableColumn fx:id="managerAddress" prefWidth="32.0" text="Address" />
+                        <TableColumn fx:id="managerPassword" prefWidth="32.0" text="Password" />
                     </columns>
                   </TableView>
                   <Button layoutX="25.0" layoutY="23.0" mnemonicParsing="false" onAction="#processView" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #40b457#40b457 #40b457;" text="View" textFill="WHITE" />
                   <Button layoutX="104.0" layoutY="23.0" mnemonicParsing="false" onAction="#processRefresh" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: #40b457#40b457 #40b457;" text="Refresh" textFill="WHITE" />
-                  <Button layoutX="402.0" layoutY="23.0" mnemonicParsing="false" onAction="#processSearch" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #40b457#40b457 #40b457;" text="Search" textFill="WHITE" />
+                  <Button layoutX="402.0" layoutY="23.0" mnemonicParsing="false" onAction="#processSearch" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #40b457;" text="Search" textFill="WHITE" />
                   <TextField fx:id="tfSearch" layoutX="228.0" layoutY="23.0" />
                </children></AnchorPane>
         </items>

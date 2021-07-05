@@ -97,7 +97,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView layoutY="68.0" prefHeight="489.0" prefWidth="487.0">
+                  <TableView layoutY="76.0" prefHeight="481.0" prefWidth="487.0">
                     <columns>
                       <TableColumn fx:id="drinkId" prefWidth="50.0" text="ID" />
                       <TableColumn fx:id="drinkName" prefWidth="79.0" text="Name" />
@@ -109,8 +109,8 @@
                     </columns>
                   </TableView>
                   <Button layoutX="36.0" layoutY="25.0" mnemonicParsing="false" onAction="#processView" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #40b457#40b457;" text="View" textFill="WHITE" />
-                  <Button layoutX="104.0" layoutY="25.0" mnemonicParsing="false" onAction="#processRefresh" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: #40b457#40b457;" text="Refresh" textFill="WHITE" />
-                  <Button layoutX="405.0" layoutY="25.0" mnemonicParsing="false" onAction="#processSearch" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #40b457#40b457;" text="Search" textFill="WHITE" />
+                  <Button layoutX="109.0" layoutY="25.0" mnemonicParsing="false" onAction="#processRefresh" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: #40b457#40b457;" text="Refresh" textFill="WHITE" />
+                  <Button layoutX="405.0" layoutY="25.0" mnemonicParsing="false" onAction="#processSearch" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #40b457;" text="Search" textFill="WHITE" />
                   <TextField fx:id="tfDrinkSearch" layoutX="230.0" layoutY="25.0" />
                </children>
             </AnchorPane>

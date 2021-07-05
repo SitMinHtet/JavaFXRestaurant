@@ -1,9 +1,6 @@
 package db;
 
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DBConnection {
 
@@ -19,6 +16,39 @@ public class DBConnection {
         return connection;
 
     }
+
+    Connection connection;
+    Statement statement;
+    ResultSet resultSet;
+    public ResultSet executeQuery(String query){
+
+        try {
+            connection = DBConnection.getConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return resultSet;
+    }
+
+
+    public boolean executeAction(String qu){
+
+        try {
+            connection = DBConnection.getConnection();
+            statement = connection.createStatement();
+            statement.execute(qu);
+            return  true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return  false;
+        }
+
+    }
+
+
 
 }
 
