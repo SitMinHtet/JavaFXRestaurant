@@ -57,9 +57,9 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="97.0" fitWidth="200.0" layoutX="2.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="foodImage" fitHeight="75.0" fitWidth="200.0" layoutX="60.0" layoutY="146.0" onMouseClicked="#processImage" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../image/food/foodImage.jpeg" />
+                        <Image url="@../../../image/food/photo.png" />
                      </image>
                   </ImageView>
                   <VBox layoutX="4.0" layoutY="236.0" prefHeight="230.0" prefWidth="195.0">
@@ -69,11 +69,20 @@
                               <Insets top="15.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField fx:id="tfFoodCode" promptText="Code">
-                           <VBox.margin>
-                              <Insets top="15.0" />
-                           </VBox.margin>
-                        </TextField>
+                        <HBox prefHeight="42.0" prefWidth="195.0">
+                           <children>
+                              <ComboBox fx:id="cobPrefix" prefHeight="26.0" prefWidth="131.0" promptText="Prefix">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                              <TextField fx:id="tfFoodCode" prefHeight="26.0" prefWidth="151.0" promptText="Code">
+                                 <HBox.margin>
+                                    <Insets left="2.0" top="15.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
                         <TextField fx:id="tfFoodQuantity" promptText="Quantity">
                            <VBox.margin>
                               <Insets top="15.0" />
@@ -97,15 +106,15 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView layoutY="76.0" prefHeight="474.0" prefWidth="487.0">
+                  <TableView fx:id="foodTable" layoutY="76.0" prefHeight="474.0" prefWidth="487.0">
                     <columns>
-                      <TableColumn prefWidth="40.0" text="ID" />
-                        <TableColumn text="Name" />
-                      <TableColumn prefWidth="75.0" text="Code" />
-                        <TableColumn prefWidth="75.0" text="Quantity" />
-                        <TableColumn prefWidth="75.0" text="Price" />
-                        <TableColumn prefWidth="75.0" text="Type" />
-                        <TableColumn prefWidth="66.0" text="Image" />
+                      <TableColumn fx:id="id" prefWidth="40.0" text="ID" />
+                        <TableColumn fx:id="name" text="Name" />
+                      <TableColumn fx:id="code" prefWidth="75.0" text="Code" />
+                        <TableColumn fx:id="quantity" prefWidth="75.0" text="Quantity" />
+                        <TableColumn fx:id="price" prefWidth="75.0" text="Price" />
+                        <TableColumn fx:id="type" prefWidth="75.0" text="Type" />
+                        <TableColumn fx:id="image" prefWidth="66.0" text="Image" />
                     </columns>
                   </TableView>
                   <Button layoutX="56.0" layoutY="26.0" mnemonicParsing="false" onAction="#processView" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #40b457;" text="View" textFill="WHITE" />

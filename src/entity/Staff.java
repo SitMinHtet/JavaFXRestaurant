@@ -39,6 +39,7 @@ public class Staff {
         this.staffAddress = new SimpleStringProperty(staffAddress);
         this.staffStatus = new SimpleStringProperty(staffStatus);
         this.staffDOB = new SimpleStringProperty(staffDOB);
+
     }
 
     public int getStaffID() {

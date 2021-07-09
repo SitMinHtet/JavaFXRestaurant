@@ -164,6 +164,7 @@ public class Manager {
         this.managerDOB.set(managerDOB);
     }
 
+
     /*
     public static Status getStatus() {
         return status;
@@ -172,6 +173,5 @@ public class Manager {
     public static void setStatus(Status status) {
         Manager.status = status;
     }
-
      */
 }

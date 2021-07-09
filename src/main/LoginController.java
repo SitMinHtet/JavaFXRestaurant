@@ -11,7 +11,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
 import utility.CheckUserCredentials;
+import utility.MyNotification;
 
 import java.io.IOException;
 import java.net.URL;
@@ -34,7 +37,11 @@ public class LoginController implements Initializable {
 
         private final CheckUserCredentials checkeUser = new CheckUserCredentials();
 
-        @FXML
+        private final MyNotification myNotification = new MyNotification();
+
+
+
+    @FXML
         void processLogin(ActionEvent event) throws IOException, SQLException {
             String email = tfEmail.getText().trim();
             String password = tfPassword.getText();
@@ -42,6 +49,13 @@ public class LoginController implements Initializable {
             String loginType = "Email";
 
             if (checkeUser.isUserValid(email, password, role, loginType)) {
+
+
+                myNotification.getNotification(NotificationType.SUCCESS,
+                        "Login Success",
+                        "You logging in with "+ email,
+                        AnimationType.SLIDE,5000);
+
 
                 switch (role) {
                     case "admin":
@@ -72,6 +86,12 @@ public class LoginController implements Initializable {
 
 
             } else {
+
+                myNotification.getNotification(NotificationType.ERROR,
+                        "Login Fail",
+                        "You logging in with "+ email,
+                        AnimationType.SLIDE,5000);
+
 
                 lblFailStatus.setVisible(true);
                 lblFailStatus.setTextFill(Paint.valueOf("Red"));

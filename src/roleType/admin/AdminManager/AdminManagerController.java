@@ -1,19 +1,27 @@
 package roleType.admin.AdminManager;
 
 import entity.Manager;
+import entity.ManagerHolder;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
 import utility.ManagerDataUtility;
+import utility.MyNotification;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.Observable;
 import java.util.ResourceBundle;
 
 public class AdminManagerController implements Initializable {
@@ -83,23 +91,11 @@ public class AdminManagerController implements Initializable {
 
     private final ManagerDataUtility managerDataUtility = new ManagerDataUtility();
     private boolean isNewButtonClick = false;
+    private int updateManagerId;
+
+    private final MyNotification myNotification = new MyNotification();
 
     public AdminManagerController() throws SQLException {
-    }
-
-    @FXML
-    void processClear(ActionEvent event) {
-        clearAllField();
-    }
-
-    @FXML
-    void processDelete(ActionEvent event) {
-
-    }
-
-    @FXML
-    void processEdit(ActionEvent event) {
-
     }
 
     @FXML
@@ -110,8 +106,49 @@ public class AdminManagerController implements Initializable {
     }
 
     @FXML
-    void processRefresh(ActionEvent event) {
+    void processEdit(ActionEvent event) {
 
+        isNewButtonClick = false;
+        enableAllField();
+
+        Manager manager = managerTable.getSelectionModel().getSelectedItem();
+        tfFName.setText(manager.getManagerFName());
+        tfLName.setText(manager.getManagerLName());
+        tfUsername.setText(manager.getManagerUsername());
+        tfEmail.setText(manager.getManagerEmail());
+        tfPassword.setText(manager.getManagerPassword());
+        tfPhone.setText(manager.getManagerPhone());
+        tfAddress.setText(manager.getManagerAddress());
+        cobStatus.setValue(manager.getManagerStatus());
+        dbDOB.setValue(LocalDate.parse(manager.getManagerDOB()));
+
+        this.updateManagerId = manager.getManagerID();
+
+    }
+
+    @FXML
+    void processDelete(ActionEvent event) throws SQLException {
+
+        Manager manager = managerTable.getSelectionModel().getSelectedItem();
+            //Integer id = (manager.getManagerID());
+            boolean isDeleteOk = managerDataUtility.deleteManager(manager);
+
+        if (!isDeleteOk){
+            myNotification.getNotification(NotificationType.SUCCESS,
+                    "Delete Success",
+                    "SuccessFully Deleted"+ manager.getManagerUsername() +" to DB",
+                    AnimationType.SLIDE,3000);
+
+            showTable("select * from manager");
+        }
+        else {
+            System.out.println("Delete Fail: "+ manager.getManagerUsername());
+        }
+    }
+
+    @FXML
+    void processClear(ActionEvent event) {
+        clearAllField();
     }
 
     @FXML
@@ -128,29 +165,80 @@ public class AdminManagerController implements Initializable {
 
         if (isNewButtonClick){
             Manager manager = new Manager(fName,lName,username,email,password,phone,address,status,dob);
-            System.out.println(manager.toString());
             boolean isSaveOk= managerDataUtility.saveManager(manager);
 
             if (!isSaveOk){
-                System.out.println("SuccessFully Saved"+ managerUsername +" to DB");
+                myNotification.getNotification(NotificationType.SUCCESS,
+                        "Saved Success",
+                        "SuccessFully Saved"+ manager.getManagerUsername() +" to DB",
+                        AnimationType.SLIDE,3000);
+
                 showTable("select * from restaurantdb.manager");
+                clearAllField();
+                disableAllField();
             }
             else {
-                System.out.println("Fail Save"+ managerUsername +" to DB");
+                myNotification.getNotification(NotificationType.SUCCESS,
+                        "Saved Fail",
+                        "Saved to Fail"+ manager.getManagerUsername() +" to DB",
+                        AnimationType.SLIDE,3000);
+
+            }
+        }
+
+        else {
+
+            Manager updateManager = new Manager(this.updateManagerId,fName,lName,username,email,password,phone,address,status,dob);
+
+            boolean rowUpdate = managerDataUtility.updateManager(updateManager);
+
+            if ( rowUpdate){
+                myNotification.getNotification(NotificationType.SUCCESS,
+                        "Updated Success",
+                        "SuccessFully Update"+ updateManager.getManagerUsername() +" to DB",
+                        AnimationType.SLIDE,3000);
+
+                showTable("select * from restaurantdb.manager");
+                clearAllField();
+                disableAllField();
+            }
+            else {
+                myNotification.getNotification(NotificationType.SUCCESS,
+                        "Fail Update",
+                        "Fail Update"+ updateManager.getManagerUsername() +" to DB",
+                        AnimationType.SLIDE,3000);
             }
         }
 
 
+
+
+    }
+
+    @FXML
+    void processView(ActionEvent event) throws IOException {
+        Manager manager = managerTable.getSelectionModel().getSelectedItem();
+        ManagerHolder managerHolder = ManagerHolder.getManagerHolder();
+        managerHolder.setManager(manager);
+
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("managerProfileUI.fxml"));
+        stage.setTitle("Profile");
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
+    @FXML
+    void processRefresh(ActionEvent event) {
+        showTable("select * from manager;");
     }
 
     @FXML
     void processSearch(ActionEvent event) {
 
-    }
-
-    @FXML
-    void processView(ActionEvent event) {
-
+        String searchByUsername = tfSearch.getText();
+        String searchQuery = "SELECT * FROM restaurantdb.manager where managerUsername ='"+searchByUsername+"';";
+        showTable(searchQuery);
     }
 
 

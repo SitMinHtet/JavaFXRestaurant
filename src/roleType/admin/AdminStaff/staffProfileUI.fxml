@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="roleType.admin.AdminStaff.StaffProfileController">
+    <children>
+        <Label alignment="CENTER" prefHeight="50.0" prefWidth="300.0" text="Staff Profile" textFill="#c4bd57">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <VBox layoutY="59.0" prefHeight="340.0" prefWidth="120.0">
+            <children>
+                <Label prefHeight="20.0" text="Staff ID">
+                    <VBox.margin>
+                        <Insets left="20.0" top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label prefHeight="20.0" text="First Name">
+                    <VBox.margin>
+                        <Insets left="20.0" top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label prefHeight="20.0" text="Last Name">
+                    <VBox.margin>
+                        <Insets left="20.0" top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label prefHeight="20.0" text="Username">
+                    <VBox.margin>
+                        <Insets left="20.0" top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label prefHeight="20.0" text="Email">
+                    <VBox.margin>
+                        <Insets left="20.0" top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label prefHeight="20.0" text="Password">
+                    <VBox.margin>
+                        <Insets left="20.0" top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label prefHeight="20.0" text="Phone">
+                    <VBox.margin>
+                        <Insets left="20.0" top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label prefHeight="20.0" text="Address">
+                    <VBox.margin>
+                        <Insets left="20.0" top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label prefHeight="20.0" text="Status">
+                    <VBox.margin>
+                        <Insets left="20.0" top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label prefHeight="20.0" text="DOB">
+                    <VBox.margin>
+                        <Insets left="20.0" top="12.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+        <VBox layoutX="122.0" layoutY="59.0" prefHeight="340.0" prefWidth="180.0">
+            <children>
+                <Label fx:id="lblId" alignment="CENTER" prefHeight="20.0" prefWidth="165.0" text="-">
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="lblFName" alignment="CENTER" prefHeight="20.0" prefWidth="165.0" text="-">
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="lblLName" alignment="CENTER" prefHeight="20.0" prefWidth="165.0" text="-">
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="lblUserName" alignment="CENTER" prefHeight="20.0" prefWidth="165.0" text="-">
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="lblEmail" alignment="CENTER" prefHeight="20.0" prefWidth="165.0" text="-">
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="lblPassword" alignment="CENTER" prefHeight="20.0" prefWidth="165.0" text="-">
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="lblPhone" alignment="CENTER" prefHeight="20.0" prefWidth="165.0" text="-">
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="lblAddress" alignment="CENTER" prefHeight="20.0" prefWidth="165.0" text="-">
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="lblStatus" alignment="CENTER" prefHeight="20.0" prefWidth="165.0" text="-">
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="lblDOB" alignment="CENTER" prefHeight="20.0" prefWidth="165.0" text="-">
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+        <Separator layoutX="39.0" layoutY="49.0" prefWidth="200.0" />
+    </children>
+</AnchorPane>

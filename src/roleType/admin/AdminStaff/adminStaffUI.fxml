@@ -20,22 +20,21 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="roleType.admin.AdminStaff.AdminStaffController">
-    <children>
-        <Label alignment="CENTER" prefHeight="50.0" prefWidth="700.0" text="Admin Staff  Section" textFill="#b90909">
-            <font>
-                <Font size="36.0" />
-            </font>
-        </Label>
-      <SplitPane dividerPositions="0.30587392550143266" layoutY="50.0" prefHeight="550.0" prefWidth="700.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="521.0" prefWidth="210.0">
+   <children>
+      <Label alignment="CENTER" prefHeight="50.0" prefWidth="700.0" text="Admin Staff Section" textFill="#b90909">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <SplitPane dividerPositions="0.3144699140401146" layoutY="50.0" prefHeight="550.0" prefWidth="700.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Label alignment="CENTER" layoutX="4.0" layoutY="1.0" prefHeight="30.0" prefWidth="198.0" text="Staff Registration" textFill="#0064ff">
+                  <Label alignment="CENTER" layoutX="4.0" layoutY="-1.0" prefHeight="29.0" prefWidth="197.0" text="Manager Registration" textFill="#0064ff">
                      <font>
                         <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <HBox layoutX="3.0" layoutY="38.0" prefHeight="65.0" prefWidth="200.0">
+                     </font></Label>
+                  <HBox layoutX="2.0" layoutY="28.0" prefHeight="70.0" prefWidth="200.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#processNew" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #0064ff;" text="New" textFill="WHITE">
                            <HBox.margin>
@@ -54,15 +53,7 @@
                         </Button>
                      </children>
                   </HBox>
-                  <Separator layoutX="2.0" layoutY="110.0" prefWidth="200.0" />
-                  <Label alignment="CENTER" layoutX="3.0" layoutY="113.0" prefHeight="20.0" prefWidth="198.0" text="Fill All Following Fields" textFill="#0064ff">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="135.0" layoutY="502.0" mnemonicParsing="false" onAction="#processSave" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #0064ff;" text="Save" textFill="WHITE" />
-                  <Button layoutX="62.0" layoutY="503.0" mnemonicParsing="false" onAction="#processClear" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #ff0000;" text="Clear" textFill="WHITE" />
-                  <VBox layoutY="144.0" prefHeight="342.0" prefWidth="210.0">
+                  <VBox layoutX="4.0" layoutY="140.0" prefHeight="342.0" prefWidth="210.0">
                      <children>
                         <HBox prefHeight="25.0" prefWidth="185.0">
                            <children>
@@ -222,31 +213,38 @@
                         </HBox>
                      </children>
                   </VBox>
+                  <Separator layoutX="2.0" layoutY="97.0" prefWidth="200.0" />
+                  <Label alignment="CENTER" layoutX="6.0" layoutY="107.0" prefHeight="17.0" prefWidth="189.0" text="Fill All Following Fields" textFill="#0064ff">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="65.0" layoutY="504.0" mnemonicParsing="false" onAction="#processClear" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #ff0000;" text="Clear" textFill="WHITE" />
+                  <Button layoutX="135.0" layoutY="504.0" mnemonicParsing="false" onAction="#processSave" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #0064ff;" text="Save" textFill="WHITE" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="548.0" prefWidth="472.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="staffTable" layoutY="86.0" prefHeight="462.0" prefWidth="481.0">
-                    <columns>
-                      <TableColumn fx:id="staffId" prefWidth="33.0" text="ID" />
-                      <TableColumn fx:id="staffFName" prefWidth="49.0" text="FName" />
-                        <TableColumn fx:id="staffLName" prefWidth="45.0" text="LName" />
-                        <TableColumn fx:id="staffUsername" prefWidth="63.0" text="Username" />
-                        <TableColumn fx:id="staffEmail" text="Email" />
-                        <TableColumn fx:id="staffPhone" prefWidth="47.0" text="Phone" />
-                        <TableColumn fx:id="staffStatus" prefWidth="48.0" text="Status" />
-                        <TableColumn fx:id="staffDOB" prefWidth="43.0" text="DOB" />
-                        <TableColumn fx:id="staffAddress" prefWidth="38.0" text="Address" />
-                        <TableColumn fx:id="staffPassword" prefWidth="38.0" text="Password" />
-                    </columns>
+                  <TableView fx:id="staffTable" layoutY="77.0" prefHeight="473.0" prefWidth="487.0">
+                     <columns>
+                        <TableColumn fx:id="staffID" prefWidth="46.0" text="ID" />
+                        <TableColumn fx:id="staffFirst" prefWidth="46.0" text="FName" />
+                        <TableColumn fx:id="staffLast" prefWidth="46.0" text="LName" />
+                        <TableColumn fx:id="staffUsername" prefWidth="46.0" text="Username" />
+                        <TableColumn fx:id="staffEmail" prefWidth="44.0" text="Email" />
+                        <TableColumn fx:id="staffPhone" prefWidth="42.0" text="Phone" />
+                        <TableColumn fx:id="staffStatus" prefWidth="49.0" text="Status" />
+                        <TableColumn fx:id="staffDOB" prefWidth="45.0" text="DOB" />
+                        <TableColumn fx:id="staffAddress" minWidth="0.0" prefWidth="55.0" text="Address" />
+                        <TableColumn fx:id="staffPassword" prefWidth="72.0" text="Password" />
+                     </columns>
                   </TableView>
-                  <Button layoutX="48.0" layoutY="35.0" mnemonicParsing="false" onAction="#processView" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #40b457 #40b457;" text="View" textFill="WHITE" />
-                  <Button layoutX="113.0" layoutY="35.0" mnemonicParsing="false" onAction="#processRefresh" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: #40b457 #40b457;" text="Refresh" textFill="WHITE" />
-                  <Button layoutX="401.0" layoutY="35.0" mnemonicParsing="false" onAction="#processSearch" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: #40b457 #40b457;" text="Search" textFill="WHITE" />
-                  <TextField fx:id="tfStaffSearch" layoutX="232.0" layoutY="37.0" />
-               </children>
-            </AnchorPane>
-        </items>
+                  <Button layoutX="25.0" layoutY="23.0" mnemonicParsing="false" onAction="#processView" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #40b457#40b457 #40b457;" text="View" textFill="WHITE" />
+                  <Button layoutX="104.0" layoutY="23.0" mnemonicParsing="false" onAction="#processRefresh" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: #40b457#40b457 #40b457;" text="Refresh" textFill="WHITE" />
+                  <Button layoutX="402.0" layoutY="23.0" mnemonicParsing="false" onAction="#processSearch" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #40b457;" text="Search" textFill="WHITE" />
+                  <TextField fx:id="tfSearch" layoutX="228.0" layoutY="23.0" />
+               </children></AnchorPane>
+         </items>
       </SplitPane>
-    </children>
+   </children>
 </AnchorPane>
